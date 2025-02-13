@@ -21,33 +21,8 @@ class Book {
 
     addBookToLibrary() {
         myLibrary.push(this);
-        // return this;
     }
 }
-
-// function Book(title, author, pages, readStatus) {
-//     this.title = title;
-//     this.author = author;
-//     this.pages = pages;
-//     this.readStatus = readStatus;
-//     this.info = function() {
-//         return (this.title + " by " + this.author + ", " + this.pages + " pages, " + this.readStatus);
-//     };
-// }
-
-// Book.prototype.toggleReadStatus = function() {
-//     if (this.readStatus === "read") {
-//         this.readStatus = "not read yet";
-//     } else {
-//         this.readStatus = "read";
-//     }
-// }
-
-// function addBookToLibrary(title, author, pages, readStatus) {
-//     let newBook = new Book(title, author, pages, readStatus);
-//     myLibrary.push(newBook);
-//     return newBook;
-// }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
 theHobbit.addBookToLibrary();
@@ -57,10 +32,6 @@ gameOfThronesBook.addBookToLibrary();
 
 const harryPotterBook = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 345, "read");
 harryPotterBook.addBookToLibrary();
-
-// addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 295, "not read yet");
-// addBookToLibrary("A Song of Ice and Fire", "George R.R. Martin", 704, "not read yet");
-// addBookToLibrary("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 345, "read")
 
 const libraryContainer = document.querySelector(".library-container");
 
