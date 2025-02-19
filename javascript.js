@@ -85,6 +85,44 @@ const pages = document.querySelector("#pages");
 const readStatus = document.querySelector("#readStatus");
 const form = document.querySelector("form");
 
+title.addEventListener('input', (event) => {
+    if (title.validity.valueMissing) {
+        title.setCustomValidity('Title cannot be empty');
+        title.reportValidity();
+    } else {
+        title.setCustomValidity('');
+    }
+})
+
+author.addEventListener('input', (event) => {
+    if (author.validity.valueMissing) {
+        author.setCustomValidity('Author cannot be empty');
+        author.reportValidity();
+    } else {
+        author.setCustomValidity('');
+    }
+})
+
+pages.addEventListener('input', (event) => {
+    if (pages.validity.patternMismatch) {
+        pages.setCustomValidity('Positive numbers only');
+        pages.reportValidity();
+    } else {
+        pages.setCustomValidity('');
+    }
+})
+
+readStatus.addEventListener('input', (event) => {
+    if (readStatus.validity.patternMismatch) {
+        readStatus.setCustomValidity('Input options: read or not read yet');
+        readStatus.reportValidity();
+    } else {
+        readStatus.setCustomValidity('');
+    }
+})
+
+
+
 // addBtn opens up the <dialog> with form
 addBtn.addEventListener("click", () => {
     addBookDialog.showModal();
@@ -104,7 +142,7 @@ confirmBtn.addEventListener("click", (event) => {
     event.preventDefault();
     if (!form.checkValidity()) {
         event.preventDefault();
-        alert("Please fill out all of the required elements to add a new book to the library.");
+        // alert("Please fill out all of the required elements to add a new book to the library.");
     } else {
         let addedBook = new Book(title.value, author.value, pages.value, readStatus.value);
         addedBook.addBookToLibrary();

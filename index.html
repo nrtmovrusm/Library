@@ -20,9 +20,9 @@
                 <label for="author">Author (required):</label>
                 <input type="text" id="author" name="author" required>
                 <label for="pages">Pages (required):</label>
-                <input type="text" id="pages" name="pages" required>
+                <input type="text" id="pages" name="pages" pattern="^[1-9]\d*$" required>
                 <label for="readStatus">Read Status (required):</label>
-                <input type="text" id="readStatus" name="readStatus" required>
+                <input type="text" id="readStatus" name="readStatus" pattern="^(read|not read yet)$" required>
                 <div class="formButtons">
                     <button id="confirmBtn" value="default">Add Book</button>
                     <button value="default" formmethod="dialog" formnovalidate>Cancel</button>
